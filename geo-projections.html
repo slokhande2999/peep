@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+j<!DOCTYPE html>
 <meta charset="utf-8">
 <link href='http://fonts.googleapis.com/css?family=Jacques+Francois+Shadow' rel='stylesheet' type='text/css'>
 <style>
@@ -10,7 +10,7 @@ body {
 }
 
 header {
-  color: #7c6e63;
+  color: #7c6e63;j
   text-transform: uppercase;
   width: 960px;
   margin: 0 auto;
@@ -195,7 +195,7 @@ var pop;
 
 var format1000 = d3.format(',');
 
-d3.json("/d/4527959/in-map-major-cities.json", function(error, data) {
+d3.json("majorcities.json", function(error, data) {
   drawNaturalEarth();
   drawIndia(data);
   drawIndiaPlaces(data);
@@ -271,7 +271,7 @@ function drawNaturalEarth() {
 }
 
 function drawStates(callback) {
-  d3.json("/d/4527959/in-states-topo.json", function(data) {
+  d3.json("in-states-topo.json", function(data) {
     states.selectAll("path")
         .data(topojson.object(data, data.objects.states).geometries)
       .enter().append("path")
@@ -307,7 +307,7 @@ function drawStates(callback) {
 }
 
 function drawPopulation(callback) {
-  d3.json("/d/4527959/in-population.json", function(population) {
+  d3.json("population.json", function(population) {
     pop = population.states;
       callback();
   });
