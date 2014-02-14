@@ -34,7 +34,7 @@ d3.json("in-states-topo.json", function(error, topology) {
       .attr("d", path)
       .attr("class", "land-boundary");
 
-  svg.append("path")
+/*  svg.append("path")
       .datum(topojson.mesh(topology, topology.objects.counties, function(a, b) { return a !== b && (a.id / 1000 | 0) === (b.id / 1000 | 0); }))
       .attr("d", path)
       .attr("class", "county-boundary");
@@ -42,7 +42,7 @@ d3.json("in-states-topo.json", function(error, topology) {
   svg.append("path")
       .datum(topojson.mesh(topology, topology.objects.states, function(a, b) { return a !== b; }))
       .attr("d", path)
-      .attr("class", "state-boundary");
+      .attr("class", "state-boundary"); */
 });
 
 </script>
