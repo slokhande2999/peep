@@ -242,7 +242,7 @@ function drawIndiaPlaces(data) {
 }
 
 // Code from D3 United States Example at http://bl.ocks.org/4150951
-function drawNaturalEarth() {
+/*function drawNaturalEarth() {
   var tiles = tile();
 
   india.selectAll('.subunit')
@@ -268,7 +268,7 @@ function drawNaturalEarth() {
         .attr("height", Math.round(tiles.scale))
         .attr("x", function(d) { return Math.round((d[0] + tiles.translate[0]) * tiles.scale); })
         .attr("y", function(d) { return Math.round((d[1] + tiles.translate[1]) * tiles.scale); });
-}
+}*/
 
 function drawStates(callback) {
   d3.json("in-states-topo.json", function(data) {
