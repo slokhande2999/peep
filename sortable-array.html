@@ -72,8 +72,8 @@ d3.tsv("data.tsv", function(error, data) {
     d.percentage = +d.percentage;
   });
 
-  x.domain(data.map(function(d) { return d.letter; }));
-  y.domain([0, d3.max(data, function(d) { return d.frequency; })]);
+  x.domain(data.map(function(d) { return d.state; }));
+  y.domain([0, d3.max(data, function(d) { return d.percentage; })]);
 
   svg.append("g")
       .attr("class", "x axis")
@@ -94,10 +94,10 @@ d3.tsv("data.tsv", function(error, data) {
       .data(data)
     .enter().append("rect")
       .attr("class", "bar")
-      .attr("x", function(d) { return x(d.letter); })
+      .attr("x", function(d) { return x(d.state); })
       .attr("width", x.rangeBand())
-      .attr("y", function(d) { return y(d.frequency); })
-      .attr("height", function(d) { return height - y(d.frequency); });
+      .attr("y", function(d) { return y(d.percentage); })
+      .attr("height", function(d) { return height - y(d.percentage); });
 
   d3.select("input").on("change", change);
 
@@ -110,9 +110,9 @@ d3.tsv("data.tsv", function(error, data) {
 
     // Copy-on-write since tweens are evaluated after a delay.
     var x0 = x.domain(data.sort(this.checked
-        ? function(a, b) { return b.frequency - a.frequency; }
-        : function(a, b) { return d3.ascending(a.letter, b.letter); })
-        .map(function(d) { return d.letter; }))
+        ? function(a, b) { return b.percentage - a.percentage; }
+        : function(a, b) { return d3.ascending(a.state, b.state); })
+        .map(function(d) { return d.state; }))
         .copy();
 
     var transition = svg.transition().duration(750),
